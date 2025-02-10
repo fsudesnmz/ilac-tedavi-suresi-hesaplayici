@@ -40,7 +40,6 @@ Program iki ana bölümden oluşur:
 
 ## Kullanım Örneği
 
-```
 Ilk ilac alim zamani:
 Yil: 2023
 Ay: 5
@@ -58,7 +57,6 @@ Dakika: 45
 Saniye: 30
 
 Toplam ilac kullanma suresi: 5 gun 5 saat 15 dakika 30 saniye
-```
 
 ## Gereksinimler
 
