@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-//İlaç alım taihini tutacak struct yapısı
+//Ä°laÃ§ alÄ±m taihini tutacak struct yapÄ±sÄ±
 struct MedicationTime {
 	
 	struct {
@@ -18,13 +18,13 @@ struct MedicationTime {
 	} time;
 };
 
-// MeticationTime struct'ını epoch zamanına çeviren fonksiyon
-//Epoch zamanı (Unix zamanı olarak da bilinir),1 Ocak 1970 00:00:00 UTC`den itibaren geçen saniye sayısını temsil eden bir zaman ölçüm sistemidir.
+// MeticationTime struct'Ä±nÄ± epoch zamanÄ±na Ã§eviren fonksiyon
+//Epoch zamanÄ± (Unix zamanÄ± olarak da bilinir),1 Ocak 1970 00:00:00 UTC`den itibaren geÃ§en saniye sayÄ±sÄ±nÄ± temsil eden bir zaman Ã¶lÃ§Ã¼m sistemidir.
  time_t convertToEpoch(struct MedicationTime mt) {
     struct tm timeinfo = {0};
 
-    timeinfo.tm_year = mt.date.year - 1900;  // Yıl 1900'den başlar
-    timeinfo.tm_mon = mt.date.month - 1;     // Aylar 0'dan başlar
+    timeinfo.tm_year = mt.date.year - 1900;  // YÄ±l 1900'den baÅŸlar
+    timeinfo.tm_mon = mt.date.month - 1;     // Aylar 0'dan baÅŸlar
     timeinfo.tm_mday = mt.date.day;
     timeinfo.tm_hour = mt.time.hour;
     timeinfo.tm_min = mt.time.minute;
@@ -42,7 +42,7 @@ int main() {
  double difference;
  int days,hours,minutes;
  
- //ilk ilaç alım zamanını kullanıcıdan isteme
+ //ilk ilaÃ§ alÄ±m zamanÄ±nÄ± kullanÄ±cÄ±dan isteme
     printf("Ilk ilac alim zamani:\n");
     printf("Yil: ");
     scanf("%d",&first_dose.date.year);
@@ -57,7 +57,7 @@ int main() {
     printf("Saniye: ");
     scanf("%d",&first_dose.time.second);
  
- //son ilaç alım zamanını kullanıcıdan isteme
+ //son ilaÃ§ alÄ±m zamanÄ±nÄ± kullanÄ±cÄ±dan isteme
     printf("Son ilac alim zamani:\n");
     printf("Yil: ");
     scanf("%d",&last_dose.date.year);
@@ -72,7 +72,7 @@ int main() {
     printf("Saniye: ");
     scanf("%d",&last_dose.time.second);
     
-	// Epoch değerlerine çevir ve farkı hesapla
+// Epoch deÃ°erlerine Ã§evirme ve farkÄ± hesaplama
     epoch1 = convertToEpoch(first_dose);
     epoch2 = convertToEpoch(last_dose);
     difference = difftime(epoch2, epoch1);
@@ -85,7 +85,8 @@ int main() {
     
     minutes = difference / 60;
     difference = difference - (minutes * 60);
-    
+	
+  // Hesaplanan farkÄ± ekrana gÃ¶sterme  
     printf("Toplam ilac kullanma suresi: %d gun %d saat %d dakika %.0f saniye",days,hours,minutes,difference);
   
     
